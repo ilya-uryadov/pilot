@@ -7,7 +7,7 @@ const rootEl = document.getElementById('root');
 
 render(
     <AppContainer>
-        <App />
+        <App name='React'/>
     </AppContainer>,
     rootEl
 );
