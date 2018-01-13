@@ -1,0 +1,24 @@
+{
+  "name": "pilot",
+  "version": "0.0.1",
+  "description": "This is a pilot!",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilya-uryadov/pilot.git"
+  },
+  "author": "Ilya Uryadov & Grigory Novikov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilya-uryadov/pilot/issues"
+  },
+  "homepage": "https://github.com/ilya-uryadov/pilot#readme",
+  "dependencies": {
+    "@types/react": "^16.0.34",
+    "react": "^16.2.0",
+    "typescript": "^2.6.2"
+  }
+}
