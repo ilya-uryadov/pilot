@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/App';
@@ -10,10 +10,10 @@ export default () =>
         <App>
             <Switch>
                 <Route exact path='/' children={({ ...props }) => {
-                    return <LoginPage {...props} />
+                    return <LoginPage />;
                 }} />
                 <Route path='/home' children={({ ...props }) => {
-                    return <HomePage {...props} />
+                    return <HomePage />;
                 }} />
             </Switch>
         </App>

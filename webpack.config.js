@@ -1,6 +1,10 @@
-const { resolve } = require('path');
+const {
+    resolve
+} = require('path');
+const {
+    CheckerPlugin
+} = require('awesome-typescript-loader');
 const webpack = require('webpack');
-
 
 module.exports = {
     resolve: {
@@ -11,7 +15,7 @@ module.exports = {
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
-        './index.jsx'
+        './index.tsx'
     ],
     output: {
         filename: 'bundle.js',
@@ -24,11 +28,22 @@ module.exports = {
         port: 3000,
         historyApiFallback: true
     },
+    devtool: 'source-map',
     module: {
         rules: [{
                 test: /\.jsx?$/,
                 use: ['babel-loader', ],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'awesome-typescript-loader',
+                exclude: /node_modules/
+            },
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                use: 'source-map-loader',
             },
             {
                 test: /\.css$/,
@@ -39,5 +54,6 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-    ],
+        new CheckerPlugin()
+    ]
 };
